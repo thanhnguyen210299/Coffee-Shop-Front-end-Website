@@ -1,0 +1,49 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes spin{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+.spin{
+  animation: spin 40s linear infinite;
+}
+
+/* Smooth scroll */
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  @variants responsive {
+      .masonry {
+          column-gap: 0.25rem;
+          column-count: 2;
+      }
+      .masonry-sm {
+          column-gap: 0.25rem;
+          column-count: 3;
+      }
+      .masonry-md {
+          column-gap: 0.25rem;
+          column-count: 4;
+      }
+      .break-inside {
+          break-inside: avoid;
+      }
+
+  }
+}
